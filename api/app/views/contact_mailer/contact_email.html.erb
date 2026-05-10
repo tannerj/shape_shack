@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1><%= @message.name %></h1>
+
+    <p>
+      Address:<br />
+      <%= @message.address_one %><br />
+      <% if @message.address_two %>
+        <%= @message.address_two %><br />
+      <% end %>
+      <%= @message.city %>, <%= @message.state %> <%= @message.zip_code %>
+    </p>
+    <p>Phone: <%= @message.phone %></p>
+    <p>Email: <%= @message.email %></p>
+    <p><%= @message.subject %></p>
+    <p><%= @message.message %></p>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Ed's Shape Shack Order Confirmation</h1>
+
+    <h2>Contact Information</h2>
+    <p>
+      <%= "#{@order.first_name} #{@order.last_name}" %><br />
+      Phone: <strong><%= @order.phone %></strong><br />
+      Email: <strong><%= @order.email %></strong>
+    </p>
+    <p>
+      Address:<br />
+      <%= @order.address %><br />
+      <% if @order.address_2 %>
+        <%= @order.address_2 %><br />
+      <% end %>
+      <%= @order.city %>, <%= @order.state %> <%= @order.zip %>
+    </p>
+
+    <h2>Order Summary</h2>
+    <% if @order.product %>
+      <h3><%= @order.product.name %></h3>
+    <% end %>
+    <p><%= @order.order_description %></p>
+  </body>
+</html>

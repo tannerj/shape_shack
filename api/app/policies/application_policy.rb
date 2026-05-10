@@ -1,0 +1,37 @@
+class ApplicationPolicy
+  ADMIN_ROLES = ["admin"].freeze
+
+  attr_reader :user, :record
+
+  def initialize(user, record)
+    @user = user
+    @record = record
+  end
+
+  def index?   = false
+  def show?    = false
+  def create?  = false
+  def new?     = create?
+  def update?  = false
+  def edit?    = update?
+  def destroy? = false
+
+  class Scope
+    def initialize(user, scope)
+      @user = user
+      @scope = scope
+    end
+
+    def resolve = scope.all
+
+    private
+
+    attr_reader :user, :scope
+  end
+
+  private
+
+  def admin?
+    user.has_role?(ADMIN_ROLES)
+  end
+end

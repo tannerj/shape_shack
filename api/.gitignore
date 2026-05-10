@@ -1,0 +1,32 @@
+# Bundler
+/.bundle
+
+# Logs
+/log/*
+!/log/.keep
+
+# Temp files
+/tmp/*
+!/tmp/.keep
+
+# Pidfiles
+/tmp/pids/*
+!/tmp/pids/
+!/tmp/pids/.keep
+
+# Local storage (dev uploads)
+/storage/*
+!/storage/.keep
+
+# Master key — never commit
+/config/master.key
+
+# Credentials
+/config/credentials.yml.enc
+
+# Byebug history
+.byebug_history
+
+# SQLite (not used here, but common Rails default)
+/db/*.sqlite3
+/db/*.sqlite3-journal

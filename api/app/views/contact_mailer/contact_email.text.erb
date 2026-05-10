@@ -1,0 +1,18 @@
+Message sent from <%= @message.name %>
+=================================================================
+
+<%= @message.name %>
+
+Address:
+  <%= @message.address_one %>
+  <% if @message.address_two %>
+    <%= @message.address_two %>
+  <% end %>
+  <%= @message.city %>, <%= @message.state %> <%= @message.zip_code %>
+
+  Phone: <%= @message.phone %>
+  Email: <%= @message.email %>
+
+  <%= @message.subject %>
+
+  <%= @message.message %>
