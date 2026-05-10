@@ -15,3 +15,11 @@ Thumbs.db
 
 # Ruby LSP workspace cache
 .ruby-lsp/
+
+# Terraform
+**/.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+!*.tfvars.example
+.terraform.lock.hcl
