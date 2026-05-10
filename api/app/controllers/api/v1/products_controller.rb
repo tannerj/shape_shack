@@ -57,7 +57,7 @@ module Api
           :name, :sku, :short_description, :description, :base_price_cents,
           :released, :discontinued,
           sizes_attributes:  [:id, :name, :dimensions, :price_cents, :position, :_destroy],
-          images_attributes: [:id, :alt_text, :caption, :_destroy]
+          images_attributes: [:id, :image, :alt_text, :caption, :_destroy]
         )
       end
     end

@@ -7,7 +7,7 @@ function formatCents(cents: number | null): string {
 }
 
 export function ProductDetailPage() {
-  const { slug } = useParams({ from: '/products/$slug' })
+  const { slug } = useParams({ from: '/public/products/$slug' })
   const { data: product, isLoading, isError } = useProduct(slug)
   const navigate = useNavigate()
 

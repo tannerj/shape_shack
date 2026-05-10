@@ -45,7 +45,7 @@ function Field({
 }
 
 export function OrderPage() {
-  const { slug } = useParams({ from: '/products/$slug/order' })
+  const { slug } = useParams({ from: '/public/products/$slug/order' })
   const { data: product } = useProduct(slug)
   const navigate = useNavigate()
   const mutation = usePlaceOrder()

@@ -26,6 +26,12 @@ export const getStoredUser = (): StoredUser | null => {
 export const setStoredUser = (user: StoredUser) =>
   localStorage.setItem(USER_KEY, JSON.stringify(user))
 
+export interface ShrineData {
+  id: string
+  storage: string
+  metadata: { filename: string; size: number; mime_type: string }
+}
+
 export const api = ky.create({
   prefixUrl: '/api/v1',
   hooks: {
@@ -48,3 +54,9 @@ export const api = ky.create({
     ],
   },
 })
+
+export async function uploadFile(file: File): Promise<ShrineData> {
+  const formData = new FormData()
+  formData.append('file', file)
+  return api.post('uploads', { body: formData }).json<ShrineData>()
+}

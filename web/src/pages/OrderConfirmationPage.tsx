@@ -3,7 +3,7 @@ import { queryClient } from '../lib/queryClient'
 import type { Order } from '../types/api'
 
 export function OrderConfirmationPage() {
-  const { token } = useParams({ from: '/orders/$token/confirmation' })
+  const { token } = useParams({ from: '/public/orders/$token/confirmation' })
   const order = queryClient.getQueryData<Order>(['order', token])
 
   return (

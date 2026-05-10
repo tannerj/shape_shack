@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      get "me", to: "users#me"
+      get  "me",      to: "users#me"
+      post "uploads", to: "uploads#create"
       resources :products,     param: :slug,  except: [:new, :edit]
       resources :orders,       param: :token, only: [:index, :show, :create]
       resources :messages,                    only: [:index, :show, :create, :update]

@@ -12,6 +12,11 @@ interface SizeAttribute {
   _destroy?: true
 }
 
+type ImageAttribute =
+  | { id: number; alt_text?: string | null; caption?: string | null }
+  | { id: number; _destroy: true }
+  | { image: string; alt_text?: string | null; caption?: string | null }
+
 export interface ProductInput {
   name: string
   sku?: string
@@ -21,6 +26,7 @@ export interface ProductInput {
   released: boolean
   discontinued: boolean
   sizes_attributes?: SizeAttribute[]
+  images_attributes?: ImageAttribute[]
 }
 
 export interface AdminProductsResponse {
